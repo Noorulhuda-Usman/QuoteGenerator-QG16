@@ -8,11 +8,32 @@
 </head>
 <body>
     <div class="quote-container">
-        <h1>Random Quote Generator</h1>
+        <h1>Random Quote Generator</h1> <!-- Heading at the top -->
+        
+        <!-- Categories Dropdown and Dark Mode Toggle -->
+        <select id="quote-category">
+            <option value="all">All</option>
+            <option value="inspirational">Inspirational</option>
+            <option value="motivational">Motivational</option>
+            <option value="funny">Funny</option>
+        </select>
+        
+        <label>
+            <input type="checkbox" id="dark-mode-toggle"> Dark Mode
+        </label>
+
+        <!-- Quote Text and Buttons -->
         <p id="quote">Click the button to generate a quote</p>
         <button id="new-quote">New Quote</button>
+        
+        <!-- Feedback Icons -->
+        <div id="feedback-icons">
+            <span id="thumbs-up" class="icon" role="button" aria-label="Like" tabindex="0">👍</span>
+            <span id="thumbs-down" class="icon" role="button" aria-label="Dislike" tabindex="0">👎</span>            
+        </div>
+        
+        <p id="feedback-status"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
