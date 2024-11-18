@@ -1,42 +1,133 @@
+/* Base styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f4f4f9; /* Light background for light mode */
+    color: #3C0000; /* Dark Maroon text color */
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Container styling */
 .quote-container {
     text-align: center;
-    background-color: white;
-    padding: 30px;
+    background-color: #D69F7E; /* Soft Beige background for light mode */
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 500px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #6B4A3E; /* Border for light mode */
 }
 
-h1 {
-    color: crimson;
-    margin-bottom: 20px;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #3C0000
+    color: #B8D8D8; /* Light text */
 }
 
-#quote {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
+body.dark-mode .quote-container {
+    background-color: #3C0000; /* Dark Maroon for dark mode container */
+    color: #D69F7E; /* Bright Beige text in container */
+    border-color: #B8D8D8; 
 }
 
+/* Button styling */
 button {
-    background-color: crimson;
-    color: white;
+    background-color: #3C0000; /* Dark Maroon for light mode */
+    color: #D69F7E; /* Bright Beige text */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-    background-color: darkred;
+    background-color: #774936; /* Hover effect */
+}
+
+body.dark-mode button {
+    background-color: #D69F7E;
+    color: #3C0000; /* Dark Maroon text in dark mode */
+}
+
+/* Title styling */
+h1 {
+    color: #3C0000; /* Dark Maroon for light mode */
+    font-size: 36px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+body.dark-mode h1 {
+    color: #D69F7E;
+}
+
+/* Quote text styling */
+#quote {
+    font-size: 16px;
+    color: #3C0000;
+    margin: 40px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    line-height: 1.5;
+}
+
+#quote.visible {
+    opacity: 1;
+}
+
+body.dark-mode #quote {
+    color: #B8D8D8; /* Light color for quote text in dark mode */
+}
+
+/* Dropdown styling */
+#quote-category {
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+body.dark-mode #quote-category {
+    background-color: #F4F4F8; 
+    color: #3C0000;
+    border: none;
+}
+
+/* Feedback Icons Styling */
+#feedback-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Space between buttons and icons */
+}
+
+.icon {
+    font-size: 24px; /* Default size */
+    margin: 0 10px; /* Space between icons */
+    cursor: pointer;
+    transition: transform 0.2s; /* Add a scale effect on hover */
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Scale up effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .icon {
+        font-size: 20px; /* Smaller size on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .icon {
+        font-size: 16px; /* Even smaller size on very small screens */
+    }
 }
