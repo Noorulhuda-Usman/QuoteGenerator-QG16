@@ -20,3 +20,6 @@ A quote generator displaying random quotes using HTML, CSS, and JavaScript. It f
 5. Toggle dark mode using the checkbox.
 
 Enjoy generating some motivation!
+
+## Live Demo  
+You can view the live demo of this project at [Quote Generator Demo](https://qg16-quote-generator.netlify.app).
